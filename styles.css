@@ -1,0 +1,79 @@
+.container,
+.rowContainer,
+/*.topLeftBox,
+.topRightBox,
+.topBoxes,
+.leftBoxes,
+.rightBoxes,
+.bottomLeftBox,
+.bottomBoxes,
+.bottomRightBox,
+.individualBox */
+.boxes {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/*.topLeftBox,
+.topRightBox,
+.topBoxes,
+.leftBoxes,
+.rightBoxes,
+.bottomLeftBox,
+.bottomBoxes,
+.bottomRightBox,
+.individualBox*/
+.boxes {
+    margin:0;
+    flex:1 1 auto;
+    min-height:100%;
+}
+
+.container {
+    width:500px;
+    height:500px;
+    flex-direction:column;
+    border:0.5px;
+    border-style:solid;
+    border-color:black;
+}
+
+.rowContainer {
+    min-width:100%;
+    margin:0;
+    flex:1 1 auto
+}
+
+.boxes {
+    border:0.5px;
+    border-style:dotted;
+    border-color:black;
+}
+/*.topLeftBox {
+    border-left: 10px, solid, black;
+    border-top: 10px,solid, black;
+}
+
+.topRightBox {
+    border-right: 10px, solid, black;
+    border-top: 10px,solid, black;
+}
+
+.leftBoxes {
+    border-left: 10px, solid, black;
+}
+
+.rightBoxes {
+    border-right: 10px, solid, black;
+}
+
+.bottomLeftBox {
+    border-left: 10px, solid, black;
+    border-bottom: 10px,solid, black;
+}
+
+.bottomRightBox {
+    border-right: 10px, solid, black;
+    border-bottom: 10px,solid, black;
+} */
