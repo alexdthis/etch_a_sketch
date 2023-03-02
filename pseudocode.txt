@@ -1,0 +1,51 @@
+variables:
+	length of the grid
+	width of the grid
+	chosen color
+	state of a square on the grid
+	
+functions to use:
+	draw a square into a container div using a loop
+	a button that brings up a prompt to change the number of squares
+	a function that adds a colored css styles to a hovered over square
+	a button to clear all squares and return them to a white color
+	a button that lets you choose your color
+	implement a way to only blacken a square by 10% instead of 100% fully black
+
+css styles:
+	a hovered state
+	a normal un-hovered state
+	the grid should be contained by a black border and possibly a lighter black for the grids
+	
+	
+Code:
+HTML:
+	body
+	<div to contain the square grid class=container>Empty</div>
+	<a button here to change the number of squares>
+	<a button here to clear the grid>
+	<a button here to change color>
+	
+JS:
+	addEventListener for all squares(on hover, hoverOver)
+	addEventListener for the button to clear squares
+	addEventListener to bring up a prompt to change the number of squares
+	addEventListener to change color
+	function drawGrid(length of one side){
+		for loop(i = 0, i < length, i++) {
+			if i=0, create line of divs with border at top and left and right
+			else create line of Divs with border on left and right sides
+			if i=length, create line of divs with border on bottom+L+R
+	
+	function hoverOver(e)
+		add class state hovered (this will change the square to another color)
+		
+	function bringupPrompt(e)
+		adds a prompt to the DOM to allow you to change the length
+		
+	function changeColor(e)
+		links the button on the HTML to allow you to change color
+		
+CSS:
+	A style that centers and makes the squares a grid rather than 16 lines
+	A style that gives a box another color
