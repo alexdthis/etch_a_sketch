@@ -50,6 +50,11 @@
     border-style:dotted;
     border-color:black;
 }
+
+.playing {
+    background-color:black;
+    
+}
 /*.topLeftBox {
     border-left: 10px, solid, black;
     border-top: 10px,solid, black;

@@ -1,8 +1,20 @@
-let number = 5;
-let container = document.querySelector(".container");
 
-function createPad (number) {
-    let lengthOfPad = number;
+let container = document.querySelector(".container");
+let submitForm = document.querySelector(".submitForLength");
+let submittedValue = 0;
+submitForm.addEventListener('click', drawPad);
+
+function drawPad(e) {
+    console.log(e);
+    
+    console.log(submittedValue);
+    numOfOldRows = document.getElementsByClassName(".rowContainer").length;
+    console.log(numOfOldRows);
+    
+}
+
+function createPad () {
+    let lengthOfPad = submittedValue = document.getElementById("lengthOfGrid").value;
     for (let length = 1; length <= lengthOfPad; length++) {
         let row = document.createElement("p");
         row.classList.add("rowContainer");
