@@ -45,12 +45,6 @@
     flex:1 1 auto
 }
 
-.boxes {
-    border:0.5px;
-    border-style:dotted;
-    border-color:black;
-}
-
 .playing {
     background-color:black;
 

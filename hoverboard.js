@@ -4,14 +4,18 @@ let submitForm = document.querySelector(".submitForLength");
 let submittedValue = 0;
     
 submitForm.addEventListener('click', drawPad);
-container.addEventListener('mouseover', hoverOver);
+container.addEventListener('mousemove', hoverOver);
 
 function hoverOver(e) {
     if (e.target.classList[0] !== "boxes") {
         return;
     }
+
+    if (e.buttons != 1) {
+        return;
+    }
     console.log(e.target.classList);
-    /*e.target.classList.add("playing");*/
+    e.target.classList.add("playing");
 }
 function drawPad(e) {
     if(container.hasChildNodes()) {
