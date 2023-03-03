@@ -16,10 +16,13 @@ function hoverOver(e) {
 function drawPad(e) {
     console.log(e);
     
-    console.log(submittedValue);
-    numOfOldRows = document.getElementsByClassName(".rowContainer").length;
-    console.log(numOfOldRows);
     
+}
+
+function removeOldSquares() {
+    while(container.hasChildNodes()) {
+        container.removeChild(container.childNodes[0]);
+    }
 }
 
 function createPad () {
