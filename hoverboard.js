@@ -3,9 +3,13 @@ let container = document.querySelector(".container");
 let submitForm = document.querySelector(".submitForLength");
 let submitValueTextField = document.querySelector("#lengthOfGrid");
 let colorSubmitButton = document.querySelector(".colorSubmitButton");
-let rValue = 0;
-let gValue = 0;
-let bValue = 0;
+let presetColorOptions  = document.querySelector("#presetColors");
+let currentColor = 'black';
+let currentColorDisplay = "Black";
+let rValue = 255;
+let gValue = 255;
+let bValue = 255;
+let usePreset = 1;
 
 let submittedValue = 0;
 let defaultColor = 1;
@@ -26,17 +30,19 @@ submitValueTextField.addEventListener("keydown", (e) => {
     }
 });
 
+presetColorOptions.addEventListener('change', presetColor);
+
+function presetColor (e) {
+    currentColor = presetColorOptions.options[presetColorOptions.selectedIndex].value;
+    currentColorDisplay = presetColorOptions.options[presetColorOptions.selectedIndex].text;
+    console.log(currentColor);
+    console.log(currentColorDisplay);
+    usePreset = 1;
+}
 /* This eventListener is linked to the submit button for the color */
 colorSubmitButton.addEventListener('click', changeColor);
 /* This eventListener is linked to the drawing function */
-container.addEventListener('mousemove', (e) => {
-    if (defaultColor === 0) {
-        colorHoverOver(e);
-    } else if (defaultColor === 1) {
-        hoverOver(e);
-
-    }
-});
+container.addEventListener('mousemove', hoverOver);
 
 /* Fired when the grid gets made.
 playing class only gets added when the mouse
@@ -49,33 +55,16 @@ function hoverOver(e) {
     if (e.buttons != 1) {
         return;
     }
-    /* console.log(e.target.classList); */
-    e.target.classList.add("playing");
-}
-
-function colorHoverOver (e) {
-    if (e.target.classList[0] !== "boxes") {
-        return;
+    if (usePreset === 1) {
+        e.target.style.backgroundColor = currentColor;
+    } else if (usePreset === 0) {
+        e.target.style.backgroundColor = ("rgb(" + rValue + "," + gValue + "," + bValue);
     }
-    if (e.buttons != 1) {
-        return;
-    }
-    e.target.style.backgroundColor = ("rgb(" + rValue + "," + gValue + "," + bValue);
-    /* Attempt at trying to assign a new class that contains a new color when 
-    a different color is selected. 
-    e.target.classList.add("newColored");
-    newColor = document.querySelectorAll(".newColored");
-    newColor.; */
-    /* e.target.backgroundColor = "red"; *//* String(`rgb($(rValue), $(gValue), $(bValue))`) */;
-    /* e.target.querySelector(".colored").style.backgroundColor = String(`rgb($(rValue), $(gValue), $(bValue))`); */
 }
 /* General function that is called when
 the submit button is clicked.
 Removes any old grid squares and redraws a new grid
 with a specified number */
-function changeColorLoop() {
-
-}
 
 function drawPad() {
     if(container.hasChildNodes()) {
@@ -105,52 +94,14 @@ function createPad () {
             let x_coord = document.createElement("div");
             x_coord.classList.add("boxes");
             row.appendChild(x_coord);
-
-            /* Bunch of if else statements to check if a box is a corner box or a border box 
-            if (width === 1 && length === 1) {
-                x_coord.classList.add("topLeftBox");
-                row.appendChild(x_coord);
-            } else if (width === lengthOfPad && length === 1) {
-                x_coord.classList.add("topRightBox");
-                row.appendChild(x_coord);
-            } else if (width === 1 && length === lengthOfPad) {
-                x_coord.classList.add("bottomLeftBox");
-                row.appendChild(x_coord);
-            } else if (width === lengthOfPad && length === lengthOfPad) {
-                x_coord.classList.add("bottomRightBox");
-                row.appendChild(x_coord);
-            } else if (length === 1) {
-                x_coord.classList.add("topBoxes");
-                row.appendChild(x_coord);
-            } else if (length === lengthOfPad) {
-                x_coord.classList.add("bottomBoxes");
-                row.appendChild(x_coord);
-            } else if (width === 1) {
-                x_coord.classList.add("leftBoxes");
-                row.appendChild(x_coord);
-            } else if (width === lengthOfPad) {
-                x_coord.classList.add("rightBoxes");
-                row.appendChild(x_coord);
-            } else {
-            else statement assigns class individualBox to every other box
-                x_coord.classList.add("individualBox");
-                row.appendChild(x_coord); 
-            } */
         }
         container.appendChild(row);
     }
 }
 
 function changeColor() {
-    defaultColor = 0;
+    usePreset = 0;
     rValue = parseInt(document.querySelector("#rValue").value);
     gValue = parseInt(document.querySelector("#gValue").value);
-    bValue = parseInt(document.querySelector("#bValue").value);
-
-    /* document
-    let coloredState = document.querySelector(".playing");
-    rValue = parseInt(document.querySelector("#rValue").value);
-    gValue = parseInt(document.querySelector("#gValue").value);
-    bValue = parseInt(document.querySelector("#bValue").value);
-    coloredState.style.background = rgb(rValue, gValue, bValue);   */ 
+    bValue = parseInt(document.querySelector("#bValue").value); 
 }

@@ -7,11 +7,12 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
 
-    <body>
+    <body ondragstart="return false;" ondrop="return false;">
         <label for="lengthOfGrid">Input your desired length:</label><br>
         <input type="text" id="lengthOfGrid" name="gridLength">
         <input type="button" for="lengthOfGrid" class="submitForLength" value="Submit">
         <div class="container"></div>
+        <div class="currentColor"></div>
         <div class="colors">
             <div class=colorFields>
                 <div class="redColor">
@@ -28,8 +29,15 @@
                 </div>
             </div>
         <input type="button" class="colorSubmitButton" value="Submit">
-        </div>    
         </div>
+        <label for="presetColors">Preset Colors:</label>
+        <select id="presetColors">
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>    
         <script src="./hoverboard.js"></script>
     </body>
 </html>

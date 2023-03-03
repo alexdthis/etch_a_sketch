@@ -22,8 +22,10 @@ body {
     align-items:center;
 }
 
+
+
 .colors {
-    border-top:10px;
+    border:20px;
     flex-direction:column;
     justify-content:space-between;
 }
@@ -36,15 +38,7 @@ body {
 body {
     flex-direction:column;
 }
-/*.topLeftBox,
-.topRightBox,
-.topBoxes,
-.leftBoxes,
-.rightBoxes,
-.bottomLeftBox,
-.bottomBoxes,
-.bottomRightBox,
-.individualBox*/
+
 .boxes {
     margin:0;
     flex:1 1 auto;
@@ -65,35 +59,3 @@ body {
     margin:0;
     flex:1 1 auto
 }
-
-.playing {
-    background-color:black;
-
-}
-/*.topLeftBox {
-    border-left: 10px, solid, black;
-    border-top: 10px,solid, black;
-}
-
-.topRightBox {
-    border-right: 10px, solid, black;
-    border-top: 10px,solid, black;
-}
-
-.leftBoxes {
-    border-left: 10px, solid, black;
-}
-
-.rightBoxes {
-    border-right: 10px, solid, black;
-}
-
-.bottomLeftBox {
-    border-left: 10px, solid, black;
-    border-bottom: 10px,solid, black;
-}
-
-.bottomRightBox {
-    border-right: 10px, solid, black;
-    border-bottom: 10px,solid, black;
-} */
