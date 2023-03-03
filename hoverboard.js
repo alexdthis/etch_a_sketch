@@ -2,8 +2,17 @@
 let container = document.querySelector(".container");
 let submitForm = document.querySelector(".submitForLength");
 let submittedValue = 0;
+    
 submitForm.addEventListener('click', drawPad);
+container.addEventListener('mouseover', hoverOver);
 
+function hoverOver(e) {
+    if (e.target.classList[0] !== "boxes") {
+        return;
+    }
+    console.log(e.target.classList);
+    /*e.target.classList.add("playing");*/
+}
 function drawPad(e) {
     console.log(e);
     
@@ -14,7 +23,7 @@ function drawPad(e) {
 }
 
 function createPad () {
-    let lengthOfPad = submittedValue = document.getElementById("lengthOfGrid").value;
+    lengthOfPad = document.getElementById("lengthOfGrid").value;
     for (let length = 1; length <= lengthOfPad; length++) {
         let row = document.createElement("p");
         row.classList.add("rowContainer");
