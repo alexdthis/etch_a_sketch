@@ -1,4 +1,5 @@
 
+/* Default color is set to black, the drop down menu is set by default */
 let container = document.querySelector(".container");
 let submitForm = document.querySelector(".submitForLength");
 let submitValueTextField = document.querySelector("#lengthOfGrid");
@@ -11,25 +12,21 @@ let gValue = 255;
 let bValue = 255;
 let usePreset = 1;
 
-let submittedValue = 0;
-let defaultColor = 1;
-
-/* Test function to get keycodes
-
-window.addEventListener('keydown', (e) => {console.log(e)}); */
 /* This statement makes the submit button draw the square when clicked */
+
 submitForm.addEventListener('click', drawPad);
-/* This one makes the text field draw when the square when enter is pressed */
+
+/* This one makes the text field draw when the square when enter is pressed while the text field is in focus*/
 submitValueTextField.addEventListener("keydown", (e) => {
-    /* console.log(e); */
     if (e.keyCode === 13) {
-        /* console.log(e); */
         drawPad();
     } else {
         return;
     }
 });
 
+/* This hooks the preset color drop down menu to presetColor function and allows you to change
+preset colors while also setting usePreset to 1 */
 presetColorOptions.addEventListener('change', presetColor);
 
 function presetColor (e) {
@@ -39,8 +36,11 @@ function presetColor (e) {
     console.log(currentColorDisplay);
     usePreset = 1;
 }
-/* This eventListener is linked to the submit button for the color */
+
+/* This eventListener is linked to the submit button for the color.
+This sets usePreset to 0 */
 colorSubmitButton.addEventListener('click', changeColor);
+
 /* This eventListener is linked to the drawing function */
 container.addEventListener('mousemove', hoverOver);
 
@@ -61,6 +61,7 @@ function hoverOver(e) {
         e.target.style.backgroundColor = ("rgb(" + rValue + "," + gValue + "," + bValue);
     }
 }
+
 /* General function that is called when
 the submit button is clicked.
 Removes any old grid squares and redraws a new grid
@@ -99,6 +100,8 @@ function createPad () {
     }
 }
 
+/* This hooks to the button for the three text fields below the square, sets a color
+in RGB format */
 function changeColor() {
     usePreset = 0;
     rValue = parseInt(document.querySelector("#rValue").value);
