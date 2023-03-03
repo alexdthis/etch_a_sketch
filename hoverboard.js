@@ -14,9 +14,10 @@ function hoverOver(e) {
     /*e.target.classList.add("playing");*/
 }
 function drawPad(e) {
-    console.log(e);
-    
-    
+    if(container.hasChildNodes()) {
+        removeOldSquares();
+    }
+    createPad();
 }
 
 function removeOldSquares() {
