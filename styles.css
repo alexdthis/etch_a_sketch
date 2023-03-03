@@ -1,14 +1,5 @@
 .container,
 .rowContainer,
-/*.topLeftBox,
-.topRightBox,
-.topBoxes,
-.leftBoxes,
-.rightBoxes,
-.bottomLeftBox,
-.bottomBoxes,
-.bottomRightBox,
-.individualBox */
 .boxes,
 .colors,
 .colorFields,
@@ -16,13 +7,17 @@
 .greenColor,
 .blueColor,
 .colorSubmitButton,
+
 body {
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-
+.currentColorDisplayer {
+    width:10px;
+    height:10px;
+}
 
 .colors {
     border:20px;
@@ -39,6 +34,10 @@ body {
     flex-direction:column;
 }
 
+.currentColorDisplayer{
+    min-width:100%;
+    min-height:100%;
+}
 .boxes {
     margin:0;
     flex:1 1 auto;

@@ -5,11 +5,13 @@ let submitForm = document.querySelector(".submitForLength");
 let submitValueTextField = document.querySelector("#lengthOfGrid");
 let colorSubmitButton = document.querySelector(".colorSubmitButton");
 let presetColorOptions  = document.querySelector("#presetColors");
+let colorTextDisplayer = document.querySelector(".currentColor");
+let colorValueDisplayer = document.querySelector(".currentColorDisplayer");
 let currentColor = 'black';
 let currentColorDisplay = "Black";
-let rValue = 255;
-let gValue = 255;
-let bValue = 255;
+let rValue = 0;
+let gValue = 0;
+let bValue = 0;
 let usePreset = 1;
 
 /* This statement makes the submit button draw the square when clicked */
@@ -34,6 +36,8 @@ function presetColor (e) {
     currentColorDisplay = presetColorOptions.options[presetColorOptions.selectedIndex].text;
     console.log(currentColor);
     console.log(currentColorDisplay);
+    colorTextDisplayer.textContent = `Current color: ${currentColorDisplay}`;
+    colorValueDisplayer.style.backgroundColor = currentColor;
     usePreset = 1;
 }
 
@@ -106,5 +110,7 @@ function changeColor() {
     usePreset = 0;
     rValue = parseInt(document.querySelector("#rValue").value);
     gValue = parseInt(document.querySelector("#gValue").value);
-    bValue = parseInt(document.querySelector("#bValue").value); 
+    bValue = parseInt(document.querySelector("#bValue").value);
+    colorTextDisplayer.textContent = `Current color: RGB (${rValue}, ${gValue}, ${bValue})`;
+    colorValueDisplayer.style.backgroundColor = ("rgb(" + rValue + "," + gValue + "," + bValue); 
 }
