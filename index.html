@@ -8,12 +8,28 @@
     </head>
 
     <body>
-        <form>
-            <label for="lengthOfGrid">Input your desired length:</label><br>
-            <input type="text" id="lengthOfGrid" name="gridLength">
-            <input type="button" for="lengthOfGrid" class="submitForLength" value="Submit">
-        </form> 
+        <label for="lengthOfGrid">Input your desired length:</label><br>
+        <input type="text" id="lengthOfGrid" name="gridLength">
+        <input type="button" for="lengthOfGrid" class="submitForLength" value="Submit">
         <div class="container"></div>
+        <div class="colors">
+            <div class=colorFields>
+                <div class="redColor">
+                    <label for="rValue">Red: </label>
+                    <input type="text" id="rValue" name="Red Value">
+                </div>
+                <div class="greenColor">
+                    <label for="gValue">Green: </label>    
+                    <input type="text" id="gValue" name="Green Value">
+                </div>
+                <div class="blueColor">
+                    <label for="bValue">Blue: </label>
+                    <input type="text" id="bValue" name="Blue Value">                    
+                </div>
+            </div>
+        <input type="button" class="colorSubmitButton" value="Submit">
+        </div>    
+        </div>
         <script src="./hoverboard.js"></script>
     </body>
 </html>

@@ -9,12 +9,33 @@
 .bottomBoxes,
 .bottomRightBox,
 .individualBox */
-.boxes {
+.boxes,
+.colors,
+.colorFields,
+.redColor,
+.greenColor,
+.blueColor,
+.colorSubmitButton,
+body {
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
+.colors {
+    border-top:10px;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.redColor,
+.greenColor,
+.blueColor {
+    padding:10px;
+}
+body {
+    flex-direction:column;
+}
 /*.topLeftBox,
 .topRightBox,
 .topBoxes,
